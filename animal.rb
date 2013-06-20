@@ -14,3 +14,8 @@ class Animal
   end
 end
 
+  def to_s
+    "Our Animals #{name} is a #{age} year old #{gender} with breed: #{breed} and favourite toys #{favtoys} "
+  end
+
+

@@ -1,12 +1,15 @@
-require 'pry'
-require 'pry-debugger'
+# require 'pry'
+# require 'pry-debugger'
 
 require_relative 'animal'
 require_relative 'shelter'
 require_relative 'client'
 
-# animal = nil
-# client = nil
+
+
+print "Welcome to Happy Tail, to adopt or donate a pet, click the (c) button to become a client or (q) to quit:"
+response = gets.chomp.downcase
+
 shelter = nil
 client = nil
 animal = nil
@@ -23,7 +26,7 @@ c1 = Client.new('jim', 22, 'male', 'yes', 3)
 c2 = Client.new('Jen', 22, 'female', 'yes', 10)
 c3 = Client.new('Jane', 22, 'female', 'yes', 1)
 
-# shelter = Shelter.new( "#{shelter.animals}" , "#{shelter.clients}")
+# shelter = Shelter.new( "#{shelter_animals}" , "#{shelter_clients}")
 
 
 # code starts
@@ -50,11 +53,12 @@ while response != 'q'
         #     group_size = gets.chomp.to_i
         # end
 
-    print "How many do you own?"
+    print "How many pets do you own?"
     nopets = gets.to_i
 
-    member << Client.new(name, age, gender, kids, nopets)
-    puts "#{member}"
+    client << Client.new(name, age, gender, kids, nopets)
+    shelter_client << client
+
 
 binding pry
   end
@@ -75,14 +79,14 @@ end
 
 
 # putting our lists in:
-shelter.animal << a1
-shelter.animal << a2
-shelter.animal << a3
+shelter_animal << a1
+shelter_animal << a2
+shelter_animal << a3
 
 
-shelter.client << c1
-shelter.client << c2
-shelter.client << c3
+shelter_client << c1
+shelter_client << c2
+shelter_client << c3
 
  print "Thank you #{ name },  (a)dopt or (d)onate, (v)iew client list or (q)uit: "
  response = gets.chomp.downcase
@@ -108,8 +112,8 @@ response != 'q'
     favtoys = gets.chomp
 
   # Here we submit Animal.new input data and send to shelter.animals
-    animal = Animal.new(name, age, gender, breed, favtoys)
-    shelter.animal << animal
+    animal << Animal.new(name, age, gender, breed, favtoys)
+    shelter_animal << animal
 
     # shelter = shelter.client || shelter.animal
 

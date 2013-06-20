@@ -11,11 +11,9 @@ class Client
       @gender = gender
       @kids = kids
       @nopets = nopets
-      @donor = []
-      @adopter = []
   end
  end
 
   def to_s
-    "Our client #{name} is a #{age} year old #{gender} with #{nopets} pets"
+    "Our client #{name} is a #{age} year old #{gender} with #{kids} kids and #{nopets} pets"
   end
