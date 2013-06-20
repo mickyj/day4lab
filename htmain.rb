@@ -10,6 +10,7 @@ require_relative 'client'
 
 
 
+
 a1 = Animal.new('tim', 2, 'male', 'bulldog', 'rope')
 a2 = Animal.new('jeff', 2, 'male', 'bulldog', 'rope')
 a3 = Animal.new('rick', 2, 'male', 'bulldog', 'rope')
@@ -24,22 +25,17 @@ c3 = Client.new('Jane', 22, 'female', 'yes', 1)
 
 # shelter = Shelter.new( "#{shelter.animals}" , "#{shelter.clients}")
 
-shelter = nil
-shelter.animals << a1
-shelter.animals << a2
-shelter.animals << a3
+# shelter = nil
+# client = nil
 
-
-shelter.clients << c1
-shelter.clients << c2
-shelter.clients << c3
 
 
 # code starts
 
 
-print" Welcome to Happy Tail, to adopt or donate a pet, click the (c) button to become a client or (q) to quit:"
+print "Welcome to Happy Tail, to adopt or donate a pet, click the (c) button to become a client or (q) to quit:"
 response = gets.chomp.downcase
+
 
 while response != 'q'
 
@@ -56,15 +52,35 @@ while response != 'q'
 
     print "Do you have any kids?  (y) or (n)"
     kids = gets.chomp
+        # while gets.chomp ==
+        #     group_size = gets.chomp.to_i
+        # end
 
-    print "Do you currently own any pets?"
+    print "How many do you own?"
     nopets = gets.chomp.to_i
 
     # Here we submit Client.new input data and send to shelter.animals
+
     client = Client.new(name, age, gender, kids, nopets)
+    #( "#{shelter.animal}" , "#{shelter.client}" )
     shelter.client <<  client
+    shelter = Shelter.new << shelter.client || shelter.animal
+    # shelter = Shelter.new( "#{shelter.animal}" , "#{shelter.client}" )
   end
+
 end
+
+
+
+# putting our lists in:
+shelter.animal << a1
+shelter.animal << a2
+shelter.animal << a3
+
+
+shelter.client << c1
+shelter.client << c2
+shelter.client << c3
 
  print "Thank you #{ name },  (a)dopt or (d)onate, (v)iew client list or (q)uit: "
  response = gets.chomp.downcase
@@ -93,11 +109,13 @@ response != 'q'
     animal = Animal.new(name, age, gender, breed, favtoys)
     shelter.animal << animal
 
-  elsif  response == 'a'
-          print "Here are the animals: #{shelter.animals}"
+
+  elsif condition
+        response == 'a'
+          print "Here are the animals: #{shelter.animal}"
 
   elsif response == 'v'
-          print "Here are the clients of Happy Tail: #{shelter.clients}"
+          print "Here are the clients of Happy Tail: #{shelter.client}"
 
   end
 end
