@@ -12,4 +12,5 @@ class Animal
       @favtoys = favtoys
 
   end
+end
 

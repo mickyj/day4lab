@@ -1,7 +1,7 @@
 
 
 
-class Clients
+class Client
   attr_accessor :name, :age, :gender, :kids, :nopets
 
     def initialize (name, age, gender, kids, nopets)
@@ -14,6 +14,7 @@ class Clients
       @donor = []
       @adopter = []
   end
+ end
 
   def to_s
     "Our client #{name} is a #{age} year old #{gender} with #{nopets} pets"

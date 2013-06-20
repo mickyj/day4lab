@@ -7,9 +7,14 @@ require_relative 'client'
 
 # pre-existing animals
 
+
+
+
 a1 = Animal.new('tim', 2, 'male', 'bulldog', 'rope')
 a2 = Animal.new('jeff', 2, 'male', 'bulldog', 'rope')
 a3 = Animal.new('rick', 2, 'male', 'bulldog', 'rope')
+
+
 
 # pre-existing clients
 
@@ -17,11 +22,13 @@ c1 = Client.new('jim', 22, 'male', 'yes', 3)
 c2 = Client.new('Jen', 22, 'female', 'yes', 10)
 c3 = Client.new('Jane', 22, 'female', 'yes', 1)
 
-# shelter = Shelter.new
+# shelter = Shelter.new( "#{shelter.animals}" , "#{shelter.clients}")
 
+shelter = nil
 shelter.animals << a1
 shelter.animals << a2
 shelter.animals << a3
+
 
 shelter.clients << c1
 shelter.clients << c2
