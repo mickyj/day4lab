@@ -1,17 +1,16 @@
-
 class Shelter
-  attr_accessor :client, :animal, :shelter_animal, :shelter_client
+  attr_accessor :client, :animal
 
-    def initialize (client, animal)
+    def initialize(name, address)
 
+  @name = name
+  @address = address
       @client = []
       @animal = []
-      @shelter_animal = {}
-      @shelter_client = {}
       end
 end
 
 
  def to_s
-    "The shelter has #{style} building at #{address} has #{ apartments.count} apartments"
-  end
+ "The shelter has #{name} and #{address} "
+end
