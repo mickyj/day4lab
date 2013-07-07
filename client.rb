@@ -14,6 +14,7 @@ class Client
     "Our client #{name} is a #{age} year old #{gender} with #{kids} kids and #{nopets} pets"
   end
 
- end
+
+end
 
 

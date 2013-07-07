@@ -82,10 +82,10 @@ while response != 'q'
   elsif
     # binding pry
         response == 'a'
-        print "Here are the animals of Happy Tail: #{shelter.animal}"
+        print "Here are the animals of #{shelter[name]}: #{shelter.animal}"
 
   elsif response == 'v'
-          print "Here are the clients of Happy Tail: #{shelter.client}"
+          print "Here are the clients of #{shelter.name.}: #{shelter.client}"
 
   end
 
